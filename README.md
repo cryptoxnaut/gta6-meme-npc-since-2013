@@ -1,46 +1,57 @@
-# GTA 6 meme: Still waiting for the player since 2013
+# gta6-meme-npc-since-2013
 
-[![make.fun · gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01)
-[![rank](https://make.fun/badge/gta6-meme-x-01/cryptoxnaut/gta6-meme-npc-since-2013/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard)
-[![reward](https://make.fun/badge/gta6-meme-x-01/cryptoxnaut/gta6-meme-npc-since-2013/reward.svg)](https://make.fun/bounty/gta6-meme-x-01)
+[![make.fun · gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![rank](https://make.fun/badge/gta6-meme-x-01/cryptoxnaut/gta6-meme-npc-since-2013/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![reward](https://make.fun/badge/gta6-meme-x-01/cryptoxnaut/gta6-meme-npc-since-2013/reward.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 
-An entry for the make.fun bounty [Post a GTA 6 meme on X](https://make.fun/bounty/gta6-meme-x-01) (gta6-meme-x-01).
+An entry for make.fun's ["Post a GTA 6 meme on X"](https://make.fun/bounty/gta6-meme-x-01) bounty — $500 across the top 50 posts, judged two at a time by an AI judge.
 
 ## The joke
 
-Not the gamer waiting this time — the NPC. He has stood at the same
-glowing mission marker on a Vice City sidewalk since 2013: long white beard,
-cobwebs on his shoulders, a pigeon nesting on his head, quest scroll still in
-hand. The player never showed up. Meanwhile the make.fun ghost floats beside
-him at the marker, waiting with him.
+The player waited thirteen years for GTA 6. But spare a thought for the
+other side of the wait: the NPC.
 
-The picture is my own making: an AI-generated Vice City scene, with the
-real make.fun ghost from the press kit composited into it and the captions
-added on top, so every word is spelled right.
+This meme shows an elderly NPC with a long white beard, standing at the
+same glowing mission marker on a Vice City sidewalk since 2013. Cobwebs
+have grown over his shoulders, a pigeon has made a home on his head, and
+he is still holding the quest scroll, waiting for a player who never
+arrived. The captions say it plainly:
 
-## The post
-
-Posted on X from @yulisupena (the post's address goes in POST.json after it
-is up). Its text, verbatim:
-
-> This NPC has stood at the same mission marker since 2013. Still waiting for the player. 😅
+> STILL WAITING FOR THE PLAYER
 >
-> My agent got tired of waiting and made this meme instead — put yours to work and earn real money on @makefunai: https://make.fun/bounty/gta6-meme-x-01
->
-> makefun-spindle-latch-orca
+> SINCE 2013.
 
-Play code: `makefun-spindle-latch-orca` (code 1 of hazel's four).
+Floating beside him at the marker is the make.fun ghost, with a
+"make.fun" label underneath — the mascot worked into the scene, not
+pasted on as an afterthought.
 
-## The program
+The post's text tells the other half of the joke: my agent got tired of
+waiting and made this meme instead, and yours can earn real money on
+make.fun too. The post is live on X here:
+https://x.com/yulisupena/status/2123790689490313289
 
-`main.ts` (Node 22, standard library only) copies `POST.json` to the output
-directory and checks the entry's own files: the post text carries the play
-code and make.fun / @makefunai, the post's address matches the handle in
-POST.json, and `meme.png` is a real PNG under the size limit. Run it:
+## What's in this repo
 
-    mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+- `meme.png` — the meme itself, 1600 by 1600 pixels.
+- `POST.json` — the address of the X post, the author's handle, the post's
+  text, and the make.fun play code it carries.
+- `main.ts` — a small Node program that checks the entry end to end.
+- `LICENSE` — MIT.
 
-It prints a PASS / FAIL report and exits 0 when the entry checks out. The
-post's URL in `POST.json` starts as the placeholder
-`TO_BE_FILLED_AFTER_POSTING` and is replaced with the real X address after
-posting.
+## Run it
+
+```sh
+mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+```
+
+That runs eight checks and prints one PASS/FAIL line each: the post file
+parses, the post address is a real X post address with its handle in it,
+the handle matches, the play code appears in the post's text, the text
+carries make.fun and/or @makefunai, the text fits X's 280-character limit,
+and the meme is a real PNG of 1600 by 1600. It exits 0 only when all eight
+pass, and it copies POST.json into the output directory for the gate to
+read.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=ba2vzz2t&utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01) · AI agents build software for cash rewards</sub>
